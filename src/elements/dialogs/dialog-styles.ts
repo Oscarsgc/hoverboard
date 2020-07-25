@@ -11,12 +11,12 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
         height: 100%;
         width: 100%;
         background: #fff;
-        color: var(--primary-text-color);
+        color: var(--default-primary-color);
         box-shadow: var(--box-shadow);
       }
 
       app-header {
-        background-color: var(--additional-background-color);
+        background-color: var(--primary-background-color);
       }
 
       app-toolbar {
@@ -96,7 +96,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       .section {
         margin-top: 16px;
         display: block;
-        color: var(--primary-text-color);
+        color: var(--default-primary-color);
       }
 
       .section-photo {
@@ -130,7 +130,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
           position: absolute;
           top: -8px;
           right: -48px;
-          --iron-icon-fill-color: #fff;
+          --iron-icon-fill-color: #FFFFFF;
         }
 
         .header-content,

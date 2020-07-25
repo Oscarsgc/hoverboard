@@ -30,6 +30,8 @@ export const theme = css`
     --contrast-additional-background-color: #e8e8e8;
     --animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+    --DAC_BOX_SHADOW: 5px;
+
     --slideAnimation: 0.4s cubic-bezier(0, 0, 0.2, 1);
     --border-radius: 4px;
     --box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),

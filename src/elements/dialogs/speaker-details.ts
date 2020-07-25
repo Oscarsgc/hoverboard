@@ -26,7 +26,7 @@ class SpeakerDetails extends SessionsHoC(
           width: 96px;
           height: 96px;
           border-radius: 50%;
-          background-color: var(--contrast-additional-background-color);
+          border:2px solid var(--initial-header-color);
           transform: translateZ(0);
           flex-shrink: 0;
         }

@@ -21,6 +21,7 @@ class SpeakersPage extends SpeakersHoC(ReduxMixin(PolymerElement)) {
     return html`
       <style include="shared-styles flex flex-alignment positioning">
         :host {
+          background-color:var(--light-primary-color);
           display: block;
           height: 100%;
         }
@@ -31,22 +32,39 @@ class SpeakersPage extends SpeakersHoC(ReduxMixin(PolymerElement)) {
           grid-gap: 16px;
           min-height: 80%;
         }
+        
+        .myContainer{
+          margin: 0 auto;
+          padding: 24px 16px;
+          max-width: var(--max-container-width);
+        }
+
+        .hero-title {
+          margin: 30px 0;
+          font-size: 40px;
+        }
+
+        .hero-description {
+          margin-bottom: 30px;
+          max-width: 600px;
+        }
 
         .speaker {
           padding: 32px 24px;
-          background: var(--primary-background-color);
+          background: var(--clear-background);
           text-align: center;
           transition: box-shadow var(--animation);
+          border: 2px solid var(--initial-header-color); 
         }
 
         .speaker:hover {
-          box-shadow: var(--box-shadow);
+          box-shadow: var(--DAC_BOX_SHADOW) var(--DAC_BOX_SHADOW) var(--initial-header-color);
         }
 
         .photo {
           width: 128px;
           height: 128px;
-          background-color: var(--secondary-background-color);
+          border:2px solid var(--initial-header-color);
           border-radius: 50%;
           overflow: hidden;
           transform: translateZ(0);
@@ -172,8 +190,10 @@ class SpeakersPage extends SpeakersHoC(ReduxMixin(PolymerElement)) {
         font-color="{$ heroSettings.speakers.fontColor $}"
         active="[[active]]"
       >
+      <div class="myContainer">
         <div class="hero-title">{$ heroSettings.speakers.title $}</div>
         <p class="hero-description">{$ heroSettings.speakers.description $}</p>
+        <div>
       </hero-block>
 
       <paper-progress indeterminate hidden$="[[contentLoaderVisibility]]"></paper-progress>
