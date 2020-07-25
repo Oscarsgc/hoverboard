@@ -26,8 +26,8 @@ class FooterNav extends PolymerElement {
 
         .footer-logo {
           margin: 10px 30px 0 0;
-          height: 24px;
-          width: 120px;
+          height: 34px;
+          width: 190px;
           float: left;
         }
 

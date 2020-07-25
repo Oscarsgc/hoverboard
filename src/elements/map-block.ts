@@ -19,7 +19,7 @@ class MapBlock extends ReduxMixin(PolymerElement) {
           margin: 0 -16px;
           padding: 16px;
           background-color: var(--default-primary-color);
-          color: var(--text-primary-color);
+          color: var(--clear-background);
         }
 
         .bottom-info {
@@ -30,7 +30,7 @@ class MapBlock extends ReduxMixin(PolymerElement) {
           --paper-icon-button: {
             width: 48px;
             height: 48px;
-            color: var(--text-primary-color);
+            color: var(--clear-background);
           }
         }
 

@@ -19,7 +19,7 @@
     "start:emulators": "firebase emulators:start",
     "start": "cross-env NODE_ENV=development npm run watch",
     "test": "jest",
-    "watch:es-dev-server": "es-dev-server --open --watch",
+    "watch:es-dev-server": "es-dev-server --watch",
     "watch:tsc": "tsc --watch",
     "watch": "concurrently --kill-others npm:watch:*"
   },

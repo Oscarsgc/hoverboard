@@ -45,6 +45,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
 
         .action-buttons {
           margin: 0 -8px;
+          color:#3DDC84
           font-size: 14px;
         }
 
@@ -53,7 +54,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         }
 
         .action-buttons .watch-video {
-          color: #fff;
+          color: #3DDC84;
         }
 
         .action-buttons iron-icon {
@@ -102,6 +103,8 @@ class HomePage extends ReduxMixin(PolymerElement) {
 
           .home-content {
             margin-top: -48px;
+            width: 100%;
+            padding: 20px;
           }
 
           .scroll-down {
@@ -131,12 +134,11 @@ class HomePage extends ReduxMixin(PolymerElement) {
       </style>
 
       <polymer-helmet active="[[active]]"></polymer-helmet>
-
-      <hero-block
-        id="hero"
-        background-image="{$ heroSettings.home.background.image $}"
+      
+      <hero-block 
+      id="hero"
+      background-video="{$ heroSettings.home.background.video $}"
         background-color="{$ heroSettings.home.background.color $}"
-        font-color="{$ heroSettings.home.fontColor $}"
         active="[[active]]"
         hide-logo
       >
@@ -163,18 +165,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
               <iron-icon icon="hoverboard:movie"></iron-icon>
               {$ viewHighlights $}
             </paper-button>
-            <paper-button
-              on-click="_scrollToTickets"
-              ga-on="click"
-              ga-event-category="tickets"
-              ga-event-action="scroll"
-              ga-event-label="hero block - scroll to tickets"
-              primary
-              invert
-            >
-              <iron-icon icon="hoverboard:ticket"></iron-icon>
-              {$ buyTicket $}
-            </paper-button>
           </div>
 
           <div class="scroll-down" on-click="_scrollNextBlock">
@@ -191,7 +181,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
               <path
                 class="stroke"
                 fill="none"
-                stroke="#c7c4b8"
+                stroke="#083041"
                 stroke-width="2.5"
                 stroke-miterlimit="10"
                 d="M12.5833445
@@ -219,7 +209,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
               ></path>
               <path
                 class="scroller"
-                fill="#c7c4b8"
+                fill="#083041"
                 d="M13.0833359
                 19.2157116h-0.9192753c-1.0999985
                 0-1.9999971-0.8999996-1.9999971-1.9999981v-5.428606c0-1.0999994
@@ -241,19 +231,13 @@ class HomePage extends ReduxMixin(PolymerElement) {
           </div>
         </div>
       </hero-block>
-      {% if showForkMeBlockForProjectIds.includes(firebase.projectId) %}
-      <fork-me-block></fork-me-block>
-      {% endif %}
       <about-block></about-block>
       <speakers-block></speakers-block>
       <subscribe-block></subscribe-block>
-      <tickets-block></tickets-block>
       <gallery-block></gallery-block>
       <about-organizer-block></about-organizer-block>
       <featured-videos></featured-videos>
-      <latest-posts-block></latest-posts-block>
       <map-block></map-block>
-      <partners-block></partners-block>
       <footer-block></footer-block>
     `;
   }

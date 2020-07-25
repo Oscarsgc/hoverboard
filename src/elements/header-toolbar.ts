@@ -22,8 +22,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
         :host([transparent]) {
           --iron-icon-fill-color: var(--hero-font-color, '#fff');
-          background-color: transparent;
-          border-bottom-color: transparent;
+          background-color: var(--initial-header-color);
+          border-bottom-color: var(--initial-header-color);
           color: var(--hero-font-color, '#fff');
         }
 
@@ -41,8 +41,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
         .toolbar-logo {
           display: block;
-          width: 150px;
-          height: 32px;
+          width: 180px;
+          height: 42px;
           background-color: var(--default-primary-color);
           transition: background-color var(--animation);
           -webkit-mask: url('/images/logo-monochrome.svg') no-repeat;
@@ -158,99 +158,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
             <a href="{$ nav.permalink $}" layout vertical center-center>{$ nav.label $}</a>
           </paper-tab>
           {% endfor %}
-
-          <paper-tab class="signin-tab" on-click="signIn" link hidden$="[[user.signedIn]]"
-            >{$ signIn $}</paper-tab
-          >
-
-          <a
-            href$="[[_getTicketUrl(tickets)]]"
-            target="_blank"
-            rel="noopener noreferrer"
-            ga-on="click"
-            ga-event-category="ticket button"
-            ga-event-action="buy_click"
-          >
-            <paper-button class="buy-button" primary>{$ buyTicket $}</paper-button>
-          </a>
-        </paper-tabs>
-
-        <paper-menu-button
-          id="notificationsMenu"
-          class="notifications-menu"
-          vertical-align="top"
-          horizontal-align="right"
-          no-animations
-        >
-          <paper-icon-button
-            icon="hoverboard:[[_getNotificationsIcon(notifications.status)]]"
-            slot="dropdown-trigger"
-          ></paper-icon-button>
-          <div class="dropdown-panel" slot="dropdown-content">
-            <div hidden$="[[_hideNotificationBlock(notifications.status, 'DEFAULT')]]">
-              <p>{$ notifications.default $}</p>
-              <div class="panel-actions" layout horizontal end-justified>
-                <paper-button primary-text on-click="_toggleNotifications"
-                  >{$ notifications.subscribe $}</paper-button
-                >
-              </div>
-            </div>
-            <div hidden$="[[_hideNotificationBlock(notifications.status, 'GRANTED')]]">
-              <p>{$ notifications.enabled $}</p>
-              <div class="panel-actions" layout horizontal end-justified>
-                <paper-button primary-text on-click="_toggleNotifications"
-                  >{$ notifications.unsubscribe $}</paper-button
-                >
-              </div>
-            </div>
-            <div hidden$="[[_hideNotificationBlock(notifications.status, 'DENIED')]]">
-              <p>{$ notifications.blocked $}</p>
-              <div class="panel-actions" layout horizontal end-justified>
-                <a href="{$ notifications.enable.link $}" target="_blank" rel="noopener noreferrer">
-                  <paper-button primary-text on-click="_closeNotificationMenu"
-                    >{$ notifications.enable.label $}
-                  </paper-button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </paper-menu-button>
-
-        <paper-menu-button
-          class="auth-menu"
-          hidden$="[[!user.signedIn]]"
-          vertical-align="top"
-          horizontal-align="right"
-          no-animations
-          layout
-          horizontal
-          center-center
-        >
-          <div
-            class="profile-image"
-            slot="dropdown-trigger"
-            style$="background-image: url('[[user.photoURL]]')"
-          ></div>
-          <div class="dropdown-panel profile-details" slot="dropdown-content" layout horizontal>
-            <div
-              class="profile-image"
-              slot="dropdown-trigger"
-              self-center
-              style$="background-image: url('[[user.photoURL]]')"
-            ></div>
-            <div layout vertical center-justified>
-              <span class="profile-name">[[user.displayName]]</span>
-              <span class="profile-email">[[user.email]]</span>
-              <span class="profile-action" role="button" on-click="signOut">{$ signOut $}</span>
-            </div>
-          </div>
-        </paper-menu-button>
-
-        <paper-icon-button
-          icon="hoverboard:account"
-          on-click="signIn"
-          hidden$="[[_isAccountIconHidden(user.signedIn, viewport.isLaptopPlus)]]"
-        ></paper-icon-button>
+        </paper-tabs>        
       </app-toolbar>
     `;
   }
@@ -357,8 +265,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     return status === NOTIFICATIONS_STATUS.DEFAULT
       ? 'bell-outline'
       : status === NOTIFICATIONS_STATUS.GRANTED
-      ? 'bell'
-      : 'bell-off';
+        ? 'bell'
+        : 'bell-off';
   }
 
   _hideNotificationBlock(status, blockStatus) {
@@ -385,7 +293,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     this.updateStyles({
       '--hero-font-color': settings.fontColor || '',
       '--hero-logo-opacity': settings.hideLogo ? '0' : '1',
-      '--hero-logo-color': settings.backgroundImage ? '#fff' : 'var(--default-primary-color)',
+      '--hero-logo-color': settings.backgroundImage ? '#424242' : 'var(--default-primary-color)',
     });
   }
 }

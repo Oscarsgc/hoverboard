@@ -3,12 +3,12 @@ import { css } from 'lit-element';
 export const theme = css`
   :host {
     --dark-primary-color: #512da8;
-    --default-primary-color: #673ab7;
+    --default-primary-color: #083041;
     --focused-color: #311b92;
-    --light-primary-color: #d1c4e9;
-    --text-primary-color: #ffffff;
+    --light-primary-color: #EEF8CF;
+    --text-primary-color: #083041;
     --accent-color: #ff5252;
-    --primary-background-color: #ffffff;
+    --primary-background-color: #d8eefd;
     --primary-text-color: #424242;
     --secondary-text-color: #757575;
     --disabled-text-color: #bdbdbd;
@@ -19,9 +19,12 @@ export const theme = css`
     --facebook-color: #3b5998;
     --border-light-color: #e2e2e2;
     --error-color: #e64a19;
+    --clear-background: #FFFFFF;
+    --initial-header-color: #3DDC84;
+    --default-orange-color: #D67554;
 
     /* Custom */
-    --default-background-color: #ffffff;
+    --default-background-color: #d8eefd;
     --secondary-background-color: #f5f5f5;
     --additional-background-color: #f7f7f7;
     --contrast-additional-background-color: #e8e8e8;
@@ -39,8 +42,8 @@ export const theme = css`
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --max-container-width: 1280px;
 
-    --primary-color-transparent: rgba(103, 58, 183, 0.1);
-    --primary-color-light: rgba(103, 58, 183, 0.8);
+    --primary-color-transparent: rgba(8, 48, 65, 0.1);
+    --primary-color-light: rgba(8, 48, 65, 0.8);
     --primary-color-white: #ede7f6;
 
     /* Labels */
@@ -119,7 +122,7 @@ export const theme = css`
 
   paper-button[primary] {
     background-color: var(--default-primary-color);
-    color: var(--text-primary-color);
+    color: var(--secondary-text-color);
   }
 
   paper-button[primary]:hover {
@@ -127,7 +130,7 @@ export const theme = css`
   }
 
   paper-button[primary][invert] {
-    color: var(--default-primary-color);
+    color: var(--secondary-text-color);
     background-color: var(--text-primary-color);
   }
 
@@ -136,7 +139,7 @@ export const theme = css`
   }
 
   paper-button[primary-text] {
-    color: var(--default-primary-color);
+    color: var(--secondary-text-color);
   }
 
   paper-button iron-icon {
