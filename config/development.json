@@ -1,16 +1,16 @@
 {
   "basepath": "/",
-  "url": "https://hoverboard-dev.firebaseapp.com/",
-  "analytics": "UA-43643469-8",
+  "url": "https://android11-dev.firebaseapp.com/",
   "prefix": "/",
   "firebase": {
-    "apiKey": "AIzaSyBu9LI-hY4NfUOPJJKuV3BfQm7edLr2-aE",
-    "appId": "1:1083195713896:web:9aed8296d8d642cb",
-    "authDomain": "hoverboard-dev.firebaseapp.com",
-    "databaseURL": "https://hoverboard-dev.firebaseio.com",
-    "messagingSenderId": "1083195713896",
-    "projectId": "hoverboard-dev",
-    "storageBucket": "hoverboard-dev.appspot.com"
+    "apiKey": "AIzaSyBOrh1Wg6bVikfDjuDIoW01D6bdmT-d11A",
+    "authDomain": "android11-3ccb9.firebaseapp.com",
+    "databaseURL": "https://android11-3ccb9.firebaseio.com",
+    "projectId": "android11-3ccb9",
+    "storageBucket": "android11-3ccb9.appspot.com",
+    "appId": "1:93802560309:web:a91da5f6d05dbee0e6ea7c",
+    "measurementId": "G-BMZ8JFXLMR",
+    "messagingSenderId": "93802560309"
   },
   "googleMapApiKey": "AIzaSyBu9LI-hY4NfUOPJJKuV3BfQm7edLr2-aE"
 }

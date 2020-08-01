@@ -1,7 +1,7 @@
 {
-  "name": "hoverboard",
+  "name": "android11",
   "version": "3.0.0",
-  "description": "Conference website template",
+  "description": "Android 11 Conference website",
   "scripts": {
     "build": "npm run clean && tsc && cross-env NODE_ENV=production rollup --config rollup.config.js",
     "clean": "rimraf dist out-tsc",
@@ -49,6 +49,7 @@
     "@power-elements/lazy-image": "^2.2.0",
     "@radi-cho/star-rating": "github:abraham/star-rating#polymer-3",
     "@webcomponents/webcomponentsjs": "^2.4.3",
+    "babel-node": "0.0.1-security",
     "clamp-js-main": "github:abraham/clamp-js-main#export",
     "firebase": "^7.16.0",
     "lit-element": "^2.3.1",
@@ -59,6 +60,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/node": "^7.10.5",
     "@firebase/testing": "^0.20.6",
     "@open-wc/building-rollup": "^1.4.2",
     "@testing-library/dom": "^7.20.1",

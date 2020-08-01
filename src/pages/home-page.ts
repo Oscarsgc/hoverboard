@@ -153,20 +153,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class="info-item">{$ heroSettings.home.description $}</div>
           </div>
 
-          <div class="action-buttons" layout horizontal center-justified wrap>
-            <paper-button
-              class="watch-video"
-              on-click="_playVideo"
-              ga-on="click"
-              ga-event-category="video"
-              ga-event-action="watch"
-              ga-event-label="hero block - view highlights"
-            >
-              <iron-icon icon="hoverboard:movie"></iron-icon>
-              {$ viewHighlights $}
-            </paper-button>
-          </div>
-
           <div class="scroll-down" on-click="_scrollNextBlock">
             <svg
               xmlns="http://www.w3.org/2000/svg"

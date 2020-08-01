@@ -9,6 +9,7 @@ class ScheduleDay extends PolymerElement {
     return html`
       <style include="shared-styles flex flex-alignment positioning">
         :host {
+          background-color:var(--light-primary-color);
           display: block;
           --tracks-number: 3;
         }

@@ -170,12 +170,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
               icon="hoverboard:insert-comment"
               on-click="_toggleFeedback"
             ></iron-icon>
-            <iron-icon
-              class="bookmark-session"
-              hidden="[[_acceptingFeedback()]]"
-              icon="hoverboard:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
-              on-click="_toggleFeaturedSession"
-            ></iron-icon>
+            
           </div>
         </div>
 
@@ -314,7 +309,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
     const now = new Date();
     const convertedTimezoneDate = new Date(
       new Date(`${this.session.day} ${this.session.startTime}`).getTime() +
-        (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * ONE_MINUTE_MS
+      (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * ONE_MINUTE_MS
     );
 
     const diff = now.getTime() - convertedTimezoneDate.getTime();

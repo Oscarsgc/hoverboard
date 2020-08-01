@@ -25,10 +25,23 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
         :host {
           display: block;
           height: 100%;
+          background-color:var(--light-primary-color) !important;
         }
 
         .container {
           min-height: 80%;
+          background-color:var(--light-primary-color);
+        }
+
+        .myContainer{
+          margin: 0 auto;
+          padding: 24px 16px;
+          max-width: var(--max-container-width);
+        }
+
+        .hero-title {
+          margin: 30px 0;
+          font-size: 40px;
         }
 
         paper-progress {
@@ -74,8 +87,10 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
         font-color="{$ heroSettings.schedule.fontColor $}"
         active="[[active]]"
       >
+      <div class="myContainer">
         <div class="hero-title">{$ heroSettings.schedule.title $}</div>
         <p class="hero-description">{$ heroSettings.schedule.description $}</p>
+        </div>
         <sticky-element slot="bottom" active="[[active]]">
           <header-bottom-toolbar></header-bottom-toolbar>
         </sticky-element>

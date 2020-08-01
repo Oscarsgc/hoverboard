@@ -62,25 +62,13 @@ class SessionDetails extends SpeakersHoC(
                 </template>
               </div>
 
-              <div class="float-button">
-                <paper-fab
-                  icon="hoverboard:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
-                  hidden$="[[!viewport.isLaptopPlus]]"
-                  on-click="_toggleFeaturedSession"
-                ></paper-fab>
-              </div>
+              
             </div>
           </app-toolbar>
         </app-header>
 
         <div class="dialog-container content">
-          <div class="float-button">
-            <paper-fab
-              icon="hoverboard:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
-              hidden$="[[viewport.isLaptopPlus]]"
-              on-click="_toggleFeaturedSession"
-            ></paper-fab>
-          </div>
+          
           <h3 class="meta-info" hidden$="[[disabledSchedule]]">
             [[session.dateReadable]], [[session.startTime]] - [[session.endTime]]
           </h3>
@@ -146,19 +134,6 @@ class SessionDetails extends SpeakersHoC(
                 </div>
               </div>
             </template>
-          </div>
-
-          <div id="feedback" class="additional-sections">
-            <h3>{$ feedback.headline $}</h3>
-
-            <auth-required hidden="[[!acceptingFeedback]]">
-              <slot slot="prompt">{$ feedback.leaveFeedback $}</slot>
-              <feedback-block collection="sessions" db-item="[[session.id]]"></feedback-block>
-            </auth-required>
-
-            <p hidden="[[acceptingFeedback]]">
-              {$ feedback.sessionClosed $}
-            </p>
           </div>
         </div>
       </app-header-layout>
@@ -275,7 +250,7 @@ class SessionDetails extends SpeakersHoC(
       const now = new Date();
       const convertedTimezoneDate = new Date(
         new Date(`${day} ${startTime}`).getTime() +
-          (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * ONE_MINUTE_MS
+        (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * ONE_MINUTE_MS
       );
 
       const diff = now.getTime() - convertedTimezoneDate.getTime();

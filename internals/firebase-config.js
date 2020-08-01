@@ -1,16 +1,20 @@
-import admin from 'firebase-admin';
+// import admin from 'firebase-admin';
+const admin = require('firebase-admin');
 // eslint-disable-next-line import/no-unresolved
-import serviceAccount from '../serviceAccount';
+// import serviceAccount from '../serviceAccount';
+const serviceAccount = require('../serviceAccount');
 
-let firestore = null;
-export function initializeFirebase() {
+var firestore = null;
+// export function initializeFirebase() {
+module.exports.initializeFirebase = function () {
   return new Promise((resolve) => {
     const firebaseApp = admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
     firestore = admin.firestore();
-    resolve(firebaseApp);
+    resolve({ app: firebaseApp, firestore: firestore });
   });
 }
 
-export { firestore };
+// export { firestore };
+module.exports.firestore = firestore;
